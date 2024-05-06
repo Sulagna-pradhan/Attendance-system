@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+header {
+    background-color: #942cda;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.controls {
+    margin-top: 10px;
+}
+
+input, select, button {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+main {
+    padding: 20px;
+    flex: 1;
+}
+
+.rollNumbersContainer {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.rollNumberRules {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.rollNumberRulesList {
+    padding-left: 20px;
+}
+
+#rollNumbers {
+    margin-bottom: 10px;
+}
+
+.rollNumberInput {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: calc(100% - 22px); /* Adjusted width to accommodate border */
+}
+
+#addRollNumber {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#addRollNumber:hover {
+    background-color: #0056b3;
+}
+footer {
+    background-color: white;
+    color: rgb(17, 16, 16);
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-buttons {
+    margin-bottom: 20px;
+}
+
+button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}

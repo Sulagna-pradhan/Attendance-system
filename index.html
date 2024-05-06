@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Attendance System</h1>
+        <div class="controls">
+            <select id="department" required>
+                <option value="" disabled selected>Select Department</option>
+                <option value="cs">Computer Science Hons</option>
+                <option value="math">Mathematics Hons</option>
+                <option value="physics">Physics Hons</option>
+            </select>
+            <input type="text" id="teacherName" placeholder="Teacher Name" required>
+            <input type="date" id="attendanceDate" required>
+            <button id="generatePdf" disabled>Generate PDF</button>
+        </div>
+    </header>
+    <main>
+        <div class="rollNumbersContainer">
+            <p class="rollNumberRules">Rules for adding roll numbers:</p>
+            <ol class="rollNumberRulesList">
+                <li>Multiple roll numbers should be separated by commas (e.g., 001, 234, 1014).</li>
+                <li>The input field is not editable once added, so please check carefully before adding.</li>
+            </ol>
+            <div id="rollNumbers">
+                <!-- Roll number inputs will be added dynamically using JavaScript -->
+            </div>
+            <button id="addRollNumber">Add Roll Number</button>
+        </div>
+    </main>
+    <footer>
+        <hr>
+        <div class="footer-buttons">
+            <button id="reportProblem">Report Problem</button>
+            <button id="meetAdmin">Meet Admin</button>
+        </div>
+        <p><b>Page created by Sulagna Pradhan</b></p>
+    </footer>
+
+
+    <script src="script.js"></script>
+    <script src="jspdf.min.js"></script>
+
+</body>
+</html>
