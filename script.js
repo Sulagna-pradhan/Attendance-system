@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const departmentSelect = document.getElementById('department');
     const teacherNameInput = document.getElementById('teacherName');
     const attendanceDateInput = document.getElementById('attendanceDate');
+    const classNameInput = document.getElementById('className');
     const rollNumbersContainer = document.getElementById('rollNumbers');
     const addRollNumberButton = document.getElementById('addRollNumber');
 
@@ -11,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     departmentSelect.addEventListener('change', toggleGenerateButton);
     teacherNameInput.addEventListener('input', toggleGenerateButton);
     attendanceDateInput.addEventListener('input', toggleGenerateButton);
+    classNameInput.addEventListener('input', toggleGenerateButton);
 
     generatePdfButton.addEventListener('click', function () {
         generatePDF();
@@ -24,8 +26,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const departmentValue = departmentSelect.value;
         const teacherNameValue = teacherNameInput.value.trim();
         const attendanceDateValue = attendanceDateInput.value.trim();
+        const classNameValue = classNameInput.value.trim();
 
-        if (departmentValue && teacherNameValue && attendanceDateValue && rollInputsCount > 0) {
+        if (departmentValue && teacherNameValue && attendanceDateValue && classNameValue && rollInputsCount > 0) {
             generatePdfButton.removeAttribute('disabled');
         } else {
             generatePdfButton.setAttribute('disabled', 'disabled');
@@ -36,8 +39,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const department = departmentSelect.value;
         const teacherName = teacherNameInput.value;
         const attendanceDate = attendanceDateInput.value;
+        const className = classNameInput.value;
         const rollNumbers = [];
-    
+
         const rollInputs = document.querySelectorAll('.rollNumberInput');
         rollInputs.forEach(input => {
             const rollNumber = input.value.trim();
@@ -45,11 +49,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 rollNumbers.push(rollNumber);
             }
         });
-    
+
         // Create a new jsPDF instance
         const doc = new jsPDF();
-    
-           // Set font size and style for the header
+
+        // Set font size and style for the header
         doc.setFontSize(16);
         doc.setFontStyle('bold');
 
@@ -60,17 +64,16 @@ document.addEventListener('DOMContentLoaded', function () {
         doc.setFontSize(12);
         doc.setFontStyle('normal');
 
-        // Add department, teacher name, date, and roll numbers to the PDF
+        // Add department, teacher name, date, class name, and roll numbers to the PDF
         doc.text(`Department: ${department}`, 20, 30);
         doc.text(`Teacher Name: ${teacherName}`, 20, 40);
         doc.text(`Date: ${attendanceDate}`, 20, 50);
-        doc.text(`Roll Numbers: ${rollNumbers.join(', ')}`, 20, 60);
-    
+        doc.text(`Class Name: ${className}`, 20, 60);
+        doc.text(`Roll Numbers: ${rollNumbers.join(', ')}`, 20, 70);
+
         // Save the PDF
         doc.save('attendance_report.pdf');
     }
-    
-    
 
     function addRollNumberInput() {
         if (rollInputsCount === 0) {
