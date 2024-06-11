@@ -5,25 +5,35 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    background-color: #222;
+    color: #ddd;
 }
 
 header {
-    background-color: #942cda;
+    background-color: #333;
     padding: 20px;
     text-align: center;
-    color: white;
+    color: #ddd;
 }
 
 .controls {
     margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 input, select, button {
     margin: 5px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #777;
     border-radius: 5px;
     font-size: 14px;
+    background-color: #333;
+    color: #ddd;
+    flex: 1 1 auto;
+    box-sizing: border-box;
 }
 
 button {
@@ -62,10 +72,12 @@ main {
 .rollNumberInput {
     margin: 5px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #777;
     border-radius: 5px;
     font-size: 14px;
     width: calc(100% - 22px); /* Adjusted width to accommodate border */
+    background-color: #333;
+    color: #ddd;
 }
 
 #addRollNumber {
@@ -82,9 +94,10 @@ main {
 #addRollNumber:hover {
     background-color: #0056b3;
 }
+
 footer {
-    background-color: white;
-    color: rgb(17, 16, 16);
+    background-color: #333;
+    color: #ddd;
     padding: 20px;
     text-align: center;
     margin-top: auto;
@@ -92,6 +105,11 @@ footer {
 
 .footer-buttons {
     margin-bottom: 20px;
+}
+
+.footer-text {
+    margin: 0;
+    margin-bottom: 5px; /* Adjust this value as needed */
 }
 
 button {
@@ -106,4 +124,16 @@ button {
 
 button:hover {
     background-color: #218838;
+}
+
+#noOfClasses {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #777;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #333;
+    color: #ddd;
+    flex: 1 1 auto;
+    box-sizing: border-box;
 }

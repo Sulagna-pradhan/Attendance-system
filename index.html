@@ -11,13 +11,37 @@
         <h1>Attendance System</h1>
         <div class="controls">
             <select id="department" required>
-                <option value="" disabled selected>Select Department</option>
-                <option value="cs">Computer Science Hons</option>
-                <option value="math">Mathematics Hons</option>
-                <option value="physics">Physics Hons</option>
+                <option value="" disabled selected>Select Your Department</option>
+                <option value="Biochemistry Hons">Biochemistry Hons</option>
+                <option value="Botany Hons">Botany Hons</option>
+                <option value="Chemistry Hons">Chemistry Hons</option>
+                <option value="Computer Science Hons">Computer Science Hons</option>
+                <option value="Economics Hons">Economics Hons</option>
+                <option value="Electronics Hons">Electronics Hons</option>
+                <option value="Geography Hons">Geography Hons</option>
+                <option value="Geology Hons">Geology Hons</option>
+                <option value="Mathematics Hons">Mathematics Hons</option>
+                <option value="Microbiology Hons">Microbiology Hons</option>
+                <option value="Physics Hons">Physics Hons</option>
+                <option value="Psychology Hons">Psychology Hons</option>
+                <option value="Statistics Hons">Statistics Hons</option>
+                <option value="Zoology Hons">Zoology Hons</option>
+                <option value="Environmental_science Hons">Environmental Science Hons</option>
             </select>
-            <input type="text" id="className" placeholder="Type Class Name" required>
-            <input type="text" id="teacherName" placeholder="Teacher Name" required>
+            <input type="text" id="teacherName" placeholder="Type Teacher Name" required>
+            <input type="text" id="className" placeholder="Type Subject Name" required>
+            <select id="semester" required>
+                <option value="" disabled selected>Select Your Semester</option>
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+                <option value="5">Semester 5</option>
+                <option value="6">Semester 6</option>
+                <option value="7">Semester 7</option>
+                <option value="8">Semester 8</option>
+            </select>
+            <input type="number" id="noOfClasses" placeholder="Number of Classes" style="display:none;" required>
             <input type="date" id="attendanceDate" placeholder="Select Date" required>
             
         </div>
@@ -28,6 +52,7 @@
             <ol class="rollNumberRulesList">
                 <li>Multiple roll numbers should be separated by commas (e.g., 001, 234, 1014).</li>
                 <li>The input field is not editable once added, so please check carefully before adding.</li>
+                <li>After adding roll numbers, click on Generate PDF button</li>
             </ol>
             <div id="rollNumbers">
                 <!-- Roll number inputs will be added dynamically using JavaScript -->
@@ -42,12 +67,19 @@
             <button id="reportProblem">Report Problem</button>
             <button id="meetAdmin">Meet Admin</button>
         </div>
-        <p><b>Page created by Sulagna Pradhan</b></p>
+        <p class="footer-text"><b>Page created by Sulagna Pradhan</b></p><br>
+        <p class="footer-text"><b><u>"ASUTOSH COLLEGE"</u></b></p>
+        <p class="footer-text"><b>Department Of Computer Science</b></p>
     </footer>
 
 
     <script src="script.js"></script>
     <script src="jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.21/jspdf.plugin.autotable.min.js"></script>
+
+
 
 </body>
 </html>
