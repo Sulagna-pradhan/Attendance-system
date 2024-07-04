@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Get elements from the DOM
     const generatePdfButton = document.getElementById('generatePdf');
     const departmentSelect = document.getElementById('department');
     const teacherNameInput = document.getElementById('teacherName');
@@ -9,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const rollNumbersContainer = document.getElementById('rollNumbers');
     const addRollNumberButton = document.getElementById('addRollNumber');
 
+    // Show or hide the number of classes input based on the selected semester
     semesterSelect.addEventListener('change', function () {
         if (parseInt(semesterSelect.value) > 2) {
             noOfClassesInput.style.display = 'block';
@@ -21,20 +23,24 @@ document.addEventListener('DOMContentLoaded', function () {
         toggleGenerateButton();
     });
 
+    // Add event listeners to input fields to enable or disable the Generate PDF button
     departmentSelect.addEventListener('change', toggleGenerateButton);
     teacherNameInput.addEventListener('input', toggleGenerateButton);
     attendanceDateInput.addEventListener('input', toggleGenerateButton);
     classNameInput.addEventListener('input', toggleGenerateButton);
     noOfClassesInput.addEventListener('input', toggleGenerateButton);
 
+    // Add event listener to the Generate PDF button
     generatePdfButton.addEventListener('click', function () {
         generatePDF();
     });
 
+    // Add event listener to the Add Roll Number button
     addRollNumberButton.addEventListener('click', function () {
         addRollNumberInput();
     });
 
+    // Function to enable or disable the Generate PDF button based on input fields
     function toggleGenerateButton() {
         const departmentValue = departmentSelect.value;
         const teacherNameValue = teacherNameInput.value.trim();
@@ -59,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // Function to generate a PDF with attendance details
     function generatePDF() {
         const department = departmentSelect.value;
         const teacherName = teacherNameInput.value;
@@ -146,6 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
         doc.save('attendance_report.pdf');
     }
 
+    // Function to add a new roll number input field
     function addRollNumberInput() {
         const rollNumberInput = document.createElement('input');
         rollNumberInput.setAttribute('type', 'text');
