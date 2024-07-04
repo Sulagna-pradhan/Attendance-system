@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--Sulagna pradhan-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attendance System</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <h1>Attendance System</h1>
         <div class="controls">
+            <!-- Department selection dropdown -->
             <select id="department" required>
                 <option value="" disabled selected>Select Your Department</option>
                 <option value="Biochemistry Hons">Biochemistry Hons</option>
@@ -28,8 +31,14 @@
                 <option value="Zoology Hons">Zoology Hons</option>
                 <option value="Environmental_science Hons">Environmental Science Hons</option>
             </select>
+
+            <!-- Teacher name input -->
             <input type="text" id="teacherName" placeholder="Type Teacher Name" required>
+
+            <!-- Subject name input -->
             <input type="text" id="className" placeholder="Type Subject Name" required>
+
+            <!-- Semester selection dropdown -->
             <select id="semester" required>
                 <option value="" disabled selected>Select Your Semester</option>
                 <option value="1">Semester 1</option>
@@ -41,45 +50,60 @@
                 <option value="7">Semester 7</option>
                 <option value="8">Semester 8</option>
             </select>
+
+            <!-- Number of classes input -->
             <input type="number" id="noOfClasses" placeholder="Number of Classes" style="display:none;" required>
+
+            <!-- Attendance date input -->
             <input type="date" id="attendanceDate" placeholder="Select Date" required>
-            
         </div>
     </header>
+
     <main>
         <div class="rollNumbersContainer">
+            <!-- Roll number rules -->
             <p class="rollNumberRules">Rules for adding roll numbers:</p>
             <ol class="rollNumberRulesList">
                 <li>Multiple roll numbers should be separated by commas (e.g., 001, 234, 1014).</li>
                 <li>The input field is not editable once added, so please check carefully before adding.</li>
                 <li>After adding roll numbers, click on Generate PDF button</li>
             </ol>
+
+            <!-- Roll numbers input container -->
             <div id="rollNumbers">
                 <!-- Roll number inputs will be added dynamically using JavaScript -->
             </div>
+
+            <!-- Add roll number button -->
             <button id="addRollNumber">Add Roll Number</button>
+
+            <!-- Generate PDF button -->
             <button id="generatePdf" disabled>Generate PDF</button>
         </div>
     </main>
+
     <footer>
         <hr>
         <div class="footer-buttons">
+            <!-- Report problem button -->
             <button id="reportProblem">Report Problem</button>
+
+            <!-- Meet admin button -->
             <button id="meetAdmin">Meet Admin</button>
         </div>
+
+        <!-- Footer text -->
         <p class="footer-text"><b>Page created by Sulagna Pradhan</b></p><br>
         <p class="footer-text"><b><u>"ASUTOSH COLLEGE"</u></b></p>
         <p class="footer-text"><b>Department Of Computer Science</b></p>
     </footer>
 
-
+    <!-- JavaScript files -->
     <script src="script.js"></script>
     <script src="jspdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.21/jspdf.plugin.autotable.min.js"></script>
-
-
-
 </body>
+
 </html>
